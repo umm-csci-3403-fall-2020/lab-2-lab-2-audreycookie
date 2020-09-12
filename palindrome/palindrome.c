@@ -13,8 +13,7 @@ char *str_reverse(char const *str) {
   for (i=0; i<len; ++i) {
     result[i] = str[len-i-1];
   }
-  result[len] = '\0';
-  
+  result[len] = '\0';  
   return result;
 }
 
@@ -45,6 +44,8 @@ char *palindrome(char const *str) {
     answer[1] = 'o';
     answer[2] = '\0';
   }
-
+  if (rev[0] != '\0'){ //if rev string is unempty, use free on it
+	  free(rev);
+  }
   return answer;
 }

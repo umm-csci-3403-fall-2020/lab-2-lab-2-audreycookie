@@ -1,9 +1,10 @@
 #include <gtest/gtest.h>
-
+#include <stdlib.h>
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
   ASSERT_STREQ(palindrome(str), "Yes");
+  void free(void *str);
 }
 
 void not_palindrome(char const *str) {
