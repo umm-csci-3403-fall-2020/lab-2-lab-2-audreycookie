@@ -4,7 +4,7 @@
 
 void is_palindrome(char const *str) {
   ASSERT_STREQ(palindrome(str), "Yes");
-  void free(void *str);
+  free((void*) str);
 }
 
 void not_palindrome(char const *str) {
