@@ -3,8 +3,11 @@
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
-  free((void*) str);
+  char *dummyString = palindrome(str); //cannot directly free memory that you input into a function, so create a dummy string that you can delete
+  ASSERT_STREQ(dummyString, "Yes");
+  if (dummyString[0] != '\0'){ //check to see if the dummyString is empty
+	  free(dummyString);
+  }
 }
 
 void not_palindrome(char const *str) {
