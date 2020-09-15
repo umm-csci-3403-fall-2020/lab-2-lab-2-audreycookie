@@ -3,19 +3,16 @@
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
-  char *dummyString = palindrome(str); //cannot directly free memory that you input into a function, so create a dummy string that you can delete
-  ASSERT_STREQ(dummyString, "Yes");
-  if (dummyString[0] != '\0'){ //check to see if the dummyString is empty
-	  free(dummyString);
-  }
+  char *paldinromeResult = palindrome(str); //give a name to the result of palindrome(str) and freeing that memory
+  ASSERT_STREQ(palindromeResult, "Yes");   
+  free(palindromeResult);
 }
 
 void not_palindrome(char const *str) {
-  char *dummyString = palindrome(str); //cannot directly free memory that you inptu into a function, so create a dummy stirng that you can delete
-  ASSERT_STREQ(dummyString, "No");
-  if (dummyString[0] != '\0'){ //check to see if the dummyString is empty
-	  free(dummyString);
-  }
+  char *palindromeResult = palindrome(str); //give a name to the result of palindrome(str) and freeing that memory
+  ASSERT_STREQ(palindromeResult, "No");
+  free(palindromeResult);
+  
 }
 
 TEST(Palindrome, HandlesEmptyString) {

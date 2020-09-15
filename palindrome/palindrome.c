@@ -43,9 +43,7 @@ char *palindrome(char const *str) {
     answer[0] = 'N';
     answer[1] = 'o';
     answer[2] = '\0';
-  }
-  if (rev[0] != '\0'){ //if rev string is unempty, use free on it
-	  free(rev);
-  }
+  } 
+  free(rev);
   return answer;
 }
