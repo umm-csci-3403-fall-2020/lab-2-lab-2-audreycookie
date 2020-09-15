@@ -11,7 +11,11 @@ void is_palindrome(char const *str) {
 }
 
 void not_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "No");
+  char *dummyString = palindrome(str); //cannot directly free memory that you inptu into a function, so create a dummy stirng that you can delete
+  ASSERT_STREQ(dummyString, "No");
+  if (dummyString[0] != '\0'){ //check to see if the dummyString is empty
+	  free(dummyString);
+  }
 }
 
 TEST(Palindrome, HandlesEmptyString) {
