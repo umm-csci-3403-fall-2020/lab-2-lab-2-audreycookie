@@ -3,7 +3,7 @@
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
-  char *paldinromeResult = palindrome(str); //give a name to the result of palindrome(str) and freeing that memory
+  char *palindromeResult = palindrome(str); //give a name to the result of palindrome(str) and freeing that memory
   ASSERT_STREQ(palindromeResult, "Yes");   
   free(palindromeResult);
 }
