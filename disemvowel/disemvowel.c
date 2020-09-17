@@ -3,10 +3,10 @@
 #include "disemvowel.h"
 
 int vowelCount(char *str){ //counts the number of vowels in a string
-  int vowelCounter;
+  int vowelCounter = 0;
   int length = strlen(str);
   for (int i = 0; i < length; ++i){
-	if (str[i] == 'a' || 'A' || 'e' || 'E' || 'i' || 'I' || 'o' || 'O' || 'u' || 'U'){
+	if (str[i] == 'a' || str[i] == 'A' || str[i] =='e' || str[i] == 'E' || str[i] == 'i' || str[i] == 'I' || str[i] == 'o' || str[i] == 'O' || str[i] == 'u' || str[i] == 'U'){
 		vowelCounter++;
   	}
   }
@@ -38,12 +38,14 @@ char *disemvowel(char *str){
   int newLength = strLength - vowelNum; //length the of input string without vowels
   char *result; //creating a new string
   result = (char*) calloc(newLength+1, sizeof(char)); // creating a string without vowel lengths
+  int resultIndex = 0;
   for (int i = 0; i < strLength; ++i){
-	if (str[i] == 'a' || 'A' || 'e' || 'E' || 'i' || 'I' || 'o' || 'O' || 'u' || 'U'){ //if the character at the current index is a vowel, continue past it
+	if (str[i] == 'a' || str[i] == 'A' || str[i] == 'e' || str[i] == 'E' || str[i] == 'i' || str[i] == 'I' || str[i] == 'o' || str[i] == 'O' || str[i] == 'u' || str[i] == 'U'){ //if the character at the current index is a vowel, continue past it
 		continue;
 	}
 	else {
-		result[i] = str[i]; //if character is not a vowel, add it to the new string
+		result[resultIndex] = str[i]; //if character is not a vowel, add it to the new string
+		resultIndex++;
 	}
   }
   return result;
